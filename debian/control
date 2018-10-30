@@ -1,0 +1,12 @@
+Source: ros-kinetic-vrep-common
+Section: misc
+Priority: extra
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), libopencv-dev, ros-kinetic-catkin, ros-kinetic-message-generation, ros-kinetic-roscpp, ros-kinetic-sensor-msgs, ros-kinetic-std-msgs
+Homepage: http://www.coppeliarobotics.com
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-vrep-common
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-message-runtime, ros-kinetic-roscpp
+Description: Common messages
