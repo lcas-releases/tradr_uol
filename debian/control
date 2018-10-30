@@ -1,0 +1,12 @@
+Source: ros-kinetic-vrep-ugv-simulation
+Section: misc
+Priority: extra
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), ros-kinetic-catkin
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-vrep-ugv-simulation
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+Description: The VREP UGV simulation package
