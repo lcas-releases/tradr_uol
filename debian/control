@@ -1,0 +1,12 @@
+Source: ros-kinetic-nifti-robot-description
+Section: misc
+Priority: extra
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), ros-kinetic-catkin, ros-kinetic-dynamic-reconfigure, ros-kinetic-rosgraph, ros-kinetic-rospack, ros-kinetic-rospy, ros-kinetic-xacro
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-nifti-robot-description
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-dynamic-reconfigure, ros-kinetic-rosgraph, ros-kinetic-rospack, ros-kinetic-rospy, ros-kinetic-xacro
+Description: The package containing the NIFTI robot 3D model data which can be loaded in Rviz.
