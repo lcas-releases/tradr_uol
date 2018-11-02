@@ -1,3 +1,0 @@
-<launch>
-    <include file="$(find nifti_robot_description)/launch/display.launch" />
-</launch>
