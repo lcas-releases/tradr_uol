@@ -1,0 +1,12 @@
+Source: ros-kinetic-nifti-robot-driver-msgs
+Section: misc
+Priority: extra
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), ros-kinetic-catkin, ros-kinetic-geometry-msgs, ros-kinetic-message-generation, ros-kinetic-nav-msgs, ros-kinetic-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-nifti-robot-driver-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-geometry-msgs, ros-kinetic-message-runtime, ros-kinetic-nav-msgs, ros-kinetic-std-msgs
+Description: The nifti_robot_driver_msgs package
