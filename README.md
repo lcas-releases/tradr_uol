@@ -1,76 +1,138 @@
-================================================================================
- PATH PLANNING STACK
-================================================================================
+# trav_nav
+3D Autonomous Navigation
 
-=======================================
-Node: mapping
----------------------------------------
+If using this code, please cite the associated publication:
 
-Description: 
-aggregates point clouds from laser scanner and remove outdated dynamic obstacles from map
+```
+@INPROCEEDINGS{6719360,
+author={M. Gianni and G. Gonnelli and A. Sinha and M. Menna and F. Pirri},
+booktitle={2013 IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR)},
+title={An Augmented Reality approach for trajectory planning and control of tracked vehicles in rescue environments},
+year={2013},
+volume={},
+number={},
+pages={1-6},
+keywords={augmented reality;mobile robots;path planning;pose estimation;SLAM (robots);tracked vehicles;tracking;trajectory control;augmented reality;trajectory planning;tracked vehicles;rescue environments;human operator;AR-based interface;3D path planning;obstacle negotiation;3D movements;marker pen;trajectory tracking controller;localization system;position feedback;dead reckoning system;ICP-based SLAM;pose estimation;3D map;planning framework;autonomous robot navigation;Trajectory;Vehicles;Three-dimensional displays;Robot kinematics;Tracking;Planning;Augmented Reality;Trajectory tracking;Trajectory control;Unmanned Ground Vehicles;Urban Search;Rescue Robotics},
+doi={10.1109/SSRR.2013.6719360},
+ISSN={2374-3247},
+month={Oct},}
+```
 
-Subscribed topics:
-	/dynamic_point_cloud: 3d point cloud from laser scanner
+## How to Install, Compile and Run
 
-Published topics:
-	/dynjoinpcl: aggregated point cloud
-	/normals_marker: debug normals estimation
+### Recompile PCL
 
-Parameters:
-	DynamicJoinPcl:
-		global_frame: /map
-		laser_frame: /laser
-		leaf_size: 0.035 (downsampling leaf size)
-		num_subdivisions: 50 (number of subdivisions. higher number -> higher accuracy. beware: too much high number -> out of memory)
-	NormalEstimationPcl:
-		flatness_curvature_threshold: 0.2
-		kernel_type: 0
-		laser_frame: /laser
-		num_threads: 4
-		radius: 0.2
-		smoothing: 1.0
+It seems that PCL needs to be recompiled with the -std=c++11 flag enabled in order to not cause segfaults on the initialization of boost.
 
-=======================================
-Node: traversability
----------------------------------------
+To correct this, you need to compile PCL from their git repo. One way to make PCL compile with the c++11 option is to add this to the CMakeLists.txt: SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-Description: 
-provides traversability analysis
+When you have the PCL compiled, you need to make install, and change CMakeLists.txt on tradr_path_planner to use these libraries, this can be done by changing the line: find_package(PCL 1.7 REQUIRED COMPONENTS common io) to find_package(PCL REQUIRED COMPONENTS common io)"
 
-Subscribed topics:
-	/dynjoinpcl: 3d map
+### Install V-REP
 
-Published topics:
-	/clustered_pcl/wall: subset of map relative to non-traversable parts (walls, obstacles, ...)
-	/clustered_pcl/no_wall: subset of map relative to traversable parts (ground, ramp, stairs)
-	/clustered_pcl/segmented: ?
-	/normals_pcl: point cloud normals
-	/normals_markers: point cloud normals marker
-	/trav/label: points labeled with semantic information (a priori cost based on the type of traversable part)
-	/trav/density: points labeled with local point cloud density
-	/trav/roughness: points labeled with local point cloud roughness
-	/trav/clearance: points labeled with information about distance to closest obstacle
-	/trav/traversability: costmap summarizing the 4 cost components (label, density, roughness, clearance)
+1. Download version 3.2.2 (tested) from http://coppeliarobotics.com/files/V-REP_PRO_V3_2_2_64_Linux.tar.gz <br />
+    You don't need to compile anything. Just extract the files in your V-REP installation folder and you are ready to execute the main launcher (vrep.sh) from there.
 
-Parameters:
-	ClusteringPcl:
-		max_superable_height: 0.2 (maximum height of a surmountable obstacle)
-		normal_clustering_thres: 0.1 (?)
-		normal_radius_search: 0.3 (normal estimation radius search)
-		pcl_cluster_tolerance: 0.3 (?)
+2. Set the environment variable VREP_ROOT_DIR: <br />
+    add in your .bashrc the following line <br />
+    _export VREP_ROOT_DIR=<here you put the absolute path of your V-REP installation folder (which contains the launcher vrep.sh)>_
 
-=======================================
-Node: pathPlanner
----------------------------------------
+### Compile
 
-Description: 
-path planning facility
+* Open a terminal
+* Then execute
+<pre><code class="c">
+$ cd ~/trav_nav_indigo_ws
+</code></pre>
+* Then compile
+<pre><code class="c">
+$ catkin_make -j8
+</code></pre>
 
-Subscribed topics:
-	/trav/traversability: traversability costmap
-	/clustered_pcl/wall: (don't know why this guy is here)
-	/goal_topic: geometric goal location
+### Install the vrep_ugv_plugin Package
 
-Published topics:
-	/robot_path: geometric path towards goal (if any)
+Once you have compiled the tradr-simulation stack, you have to copy the lib _~/trav_nav_indigo_ws/devel/lib/libv_repExtRos.so_ in the installation folder VREP_ROOT_DIR (NOTE: this lib enables V-REP to get and parse track velocity command messages)
 
+### Testing the vrep_ugv_simulation Package
+
+* Open a terminal, source the workspace and execute
+<pre><code class="c">
+$ roslaunch vrep_ugv_simulation vrep_ugv_simulation.launch
+</code></pre>
+
+* Press the play button on V-REP
+
+Once you completed one of the above procedures, you should have your simulator running and a small window with title "UGV TeleOp" should appear. Keep the focus on that window (click on it) and you will be able to move the UGV with the arrow keys. By using the keys 'A','S','D','W' you are also able to change the configuration of its flippers in order to climb stairs.
+
+### V-REP with the Path Planner
+
+1. Lauch the UGV simulation on V-REP: open a new terminal, source the workspace and run
+<pre><code class="c">
+$ roslaunch vrep_ugv_simulation vrep_ugv_simulation.launch
+</code></pre>
+
+2. Press the play button on V-REP
+
+3. Run the path planner with its RVIZ interface
+   - If you want to run the single-waypoint path planner, open a new terminal and run
+   <pre><code class="c">
+   $ roslaunch tradr_path_planner sim_main_tradr_path_planner_ugv1.launch
+   </code></pre>
+
+   On RVIZ, you can set a goal for the planner by using the dedicated interactive marker. The interactive marker (a sphere) will appear over the robot when you launch the tradr_path_planner node.
+
+   Move the marker at your desired position (hold left click on it and move it w.r.t. image plane; if you also hold SHIFT button you will change the depth of the marker)
+   Then right-click on it and select from the menu the action "Select Goal". If you want to abort the goal once is selected, select the action "Abort Goal" from the same menu.
+   Text messages will appear over the marker explaining you what is happening. The marker color will change accordingly:
+     - Grey, path planner is waiting for a goal selection
+     - Yellow, the path planner is planning
+     - Green, a path has been found
+     - Red, the path planner could not find a path
+
+   N.B.: a path to the designated goal can be actually computed if the shown traversability map actually "connect" the goal and the robot positions.
+   You may be required to wait few seconds till the traversability node actually complete the traversability map construction from the mapper inputs.
+
+   Once a path has been found, the path planner will publish it towards the trajectory controller which will make the robot automatically follow the path.
+
+   - otherwise, if you want to run the multi-waypoint path planner, open a new terminal and run
+   <pre><code class="c">
+   $ roslaunch tradr_path_planner sim_main_queue_tradr_path_planner_ugv1.launch
+   </code></pre>
+
+   On RVIZ:
+
+     - Press the key 'M' in order to add a new waypoint directly on the traversability cloud. You can move each created waypoint by holding right click on it and moving. The waypoints should automatically stick to the traversability cloud.
+     - Once you have selected your desired number of waypoints you can right click on one of them and select from the menu the action "Append Task". If you want the robot to continuously revisit the waypoints you set (cyclic path), then select the action "Append Cyclic Task".
+    The marker colors will change accordingly:
+       - Orange, the marker has not been added
+       - Yellow, the path planner is planning
+       - Green, a path has been found
+       - Red, the path planner could not find a path
+    Once the waypoints get green, you can right click on one of them and select from the menu the action "Stop the controller" in order to stop the trajectory control and the robot.
+
+### Tuning the parameters of Normal Estimation, Clustering and Traversability Analysis
+To tune the parameters of these functionalities open a new terminal, source the workspace and execute
+<pre><code class="c">
+$ rosrun rqt_reconfigure rqt_reconfigure
+</code></pre>
+
+A concise description of these parameters can be found in _~/trav_nav_indigo_ws/src/tradr-loc-map-nav/tradr_path_planner/README.md_ file
+
+### Octomap with three input channels
+
+If you want to use the version of Octomap modified to merge point cloud coming from different channels (sensors) in a single octree then you have to modify the
+launch file where your octomap node is called as follows
+* Change the name of the package from
+<pre><code class="c">
+pkg="octomap_server"
+</code></pre>
+to
+<pre><code class="c">
+pkg="ms_octomap_server"
+</code></pre>
+* Remap the point cloud_in1, cloud_in2 and cloud_in3 topics with the topics where the point clouds coming from differents sensors are published. For example
+<pre><code class="c">
+&lt;remap from = "cloud_in1" to = "/point_cloud_from_laser1"/&gt
+&lt;remap from = "cloud_in2" to = "/point_cloud_from_laser2"/&gt
+&lt;remap from = "cloud_in3" to = "/point_cloud_from_rgbd_camera"/&gt
+</code></pre>
