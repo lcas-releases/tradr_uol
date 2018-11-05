@@ -1,6 +1,0 @@
-#request save PC
-sensor_msgs/PointCloud2 surveypoints
----
-#response to save PC
-bool status
-
