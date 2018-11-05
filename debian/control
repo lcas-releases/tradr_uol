@@ -1,0 +1,12 @@
+Source: ros-kinetic-tradr-path-planner-rviz-wp-plugin
+Section: misc
+Priority: extra
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), qtbase5-dev, ros-kinetic-catkin, ros-kinetic-class-loader, ros-kinetic-dynamic-reconfigure, ros-kinetic-exploration-msgs, ros-kinetic-geometry-msgs, ros-kinetic-message-filters, ros-kinetic-nav-msgs, ros-kinetic-patrolling-build-graph-msgs, ros-kinetic-pcl-catkin-c11, ros-kinetic-pcl-conversions-c11, ros-kinetic-pcl-ros-c11, ros-kinetic-rviz, ros-kinetic-std-msgs, ros-kinetic-tf, ros-kinetic-tradr-path-planner, ros-kinetic-tradr-trajectory-control-msgs, ros-kinetic-wireless-network-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-tradr-path-planner-rviz-wp-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-class-loader, ros-kinetic-dynamic-reconfigure, ros-kinetic-exploration-msgs, ros-kinetic-geometry-msgs, ros-kinetic-message-filters, ros-kinetic-nav-msgs, ros-kinetic-patrolling-build-graph-msgs, ros-kinetic-pcl-catkin-c11, ros-kinetic-pcl-conversions-c11, ros-kinetic-pcl-ros-c11, ros-kinetic-rviz, ros-kinetic-std-msgs, ros-kinetic-tf, ros-kinetic-tradr-path-planner, ros-kinetic-tradr-trajectory-control-msgs, ros-kinetic-wireless-network-msgs
+Description: The tradr_path_planner_rviz_wp_plugin package
