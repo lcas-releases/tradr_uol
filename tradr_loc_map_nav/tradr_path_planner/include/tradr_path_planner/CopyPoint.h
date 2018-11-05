@@ -1,1 +1,0 @@
-../CopyPoint.h
