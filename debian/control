@@ -1,0 +1,12 @@
+Source: ros-melodic-tradr-path-planner
+Section: misc
+Priority: optional
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, libeigen3-dev, ros-melodic-actionlib, ros-melodic-actionlib-msgs, ros-melodic-catkin, ros-melodic-dynamic-reconfigure, ros-melodic-geometry-msgs, ros-melodic-interactive-markers, ros-melodic-laser-geometry, ros-melodic-nav-msgs, ros-melodic-networkanalysis-msgs, ros-melodic-pcl-catkin-c11, ros-melodic-pcl-conversions-c11, ros-melodic-pcl-ros-c11, ros-melodic-robot-trajectory-saver-msgs, ros-melodic-roscpp, ros-melodic-rospy, ros-melodic-std-msgs, ros-melodic-tf, ros-melodic-tradr-trajectory-control-msgs, ros-melodic-wireless-network-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-melodic-tradr-path-planner
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, libeigen3-dev, ros-melodic-actionlib, ros-melodic-actionlib-msgs, ros-melodic-dynamic-reconfigure, ros-melodic-geometry-msgs, ros-melodic-interactive-markers, ros-melodic-laser-geometry, ros-melodic-nav-msgs, ros-melodic-networkanalysis-msgs, ros-melodic-pcl-catkin-c11, ros-melodic-pcl-conversions-c11, ros-melodic-pcl-ros-c11, ros-melodic-robot-trajectory-saver-msgs, ros-melodic-roscpp, ros-melodic-rospy, ros-melodic-std-msgs, ros-melodic-tf, ros-melodic-tradr-trajectory-control-msgs, ros-melodic-wireless-network-msgs
+Description: The tradr_path_planner package - path planner
