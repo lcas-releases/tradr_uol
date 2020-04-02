@@ -1,0 +1,82 @@
+ros-melodic-ms-octomap-mapping (1.1.0-1bionic) bionic; urgency=high
+
+
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Wed, 01 Apr 2020 23:00:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.11-1bionic) bionic; urgency=high
+
+  * Merge branch 'master' of https://github.com/LCAS/tradr_uol
+  * Contributors: Riccardo Polvara
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Mon, 05 Nov 2018 00:00:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.10-1bionic) bionic; urgency=high
+
+  * Merge branch 'master' of https://github.com/LCAS/tradr_uol
+  * Contributors: Riccardo Polvara
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Mon, 05 Nov 2018 00:00:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.9-1bionic) bionic; urgency=high
+
+  * Merge branch 'master' of https://github.com/LCAS/tradr_uol
+  * Contributors: Riccardo Polvara
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Fri, 02 Nov 2018 00:00:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.8-1bionic) bionic; urgency=high
+
+  * Merge branch 'master' of https://github.com/LCAS/tradr_uol
+  * Contributors: Riccardo Polvara
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Fri, 02 Nov 2018 00:00:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.7-1bionic) bionic; urgency=high
+
+
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Thu, 01 Nov 2018 00:00:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.6-1bionic) bionic; urgency=high
+
+
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Tue, 30 Oct 2018 00:00:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.5-1bionic) bionic; urgency=high
+
+
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Tue, 30 Oct 2018 00:00:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.4-1bionic) bionic; urgency=high
+
+
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Tue, 30 Oct 2018 00:00:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.3-1bionic) bionic; urgency=high
+
+  * clear changelog
+  * Contributors: Marc Hanheide
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Tue, 30 Oct 2018 22:47:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.2-1bionic) bionic; urgency=high
+
+  * changelogs
+  * Contributors: Marc Hanheide
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Tue, 30 Oct 2018 22:34:00 -0000
+
+ros-melodic-ms-octomap-mapping (1.0.1-1bionic) bionic; urgency=high
+
+  * all versions the same
+  * Maintainers updated and Thorvald references removed
+  * Clean workspace
+  * Contributors: Marc Hanheide, Riccardo Polvara
+
+ -- Riccardo Polvara <rpolvara@lincoln.ac.uk>  Tue, 30 Oct 2018 22:29:00 -0000
+
+
