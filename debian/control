@@ -1,0 +1,12 @@
+Source: ros-melodic-nifti-robot-description
+Section: misc
+Priority: optional
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-catkin, ros-melodic-dynamic-reconfigure, ros-melodic-rosgraph, ros-melodic-rospack, ros-melodic-rospy, ros-melodic-xacro
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-melodic-nifti-robot-description
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-dynamic-reconfigure, ros-melodic-rosgraph, ros-melodic-rospack, ros-melodic-rospy, ros-melodic-xacro
+Description: The package containing the NIFTI robot 3D model data which can be loaded in Rviz.
