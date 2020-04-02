@@ -1,0 +1,12 @@
+Source: ros-melodic-nifti-launchers
+Section: misc
+Priority: optional
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-catkin
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-melodic-nifti-launchers
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, 
+Description: Global launchers and configuration files
