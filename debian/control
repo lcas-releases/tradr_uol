@@ -1,0 +1,12 @@
+Source: ros-melodic-tradr-trajectory-control
+Section: misc
+Priority: optional
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, ros-melodic-actionlib, ros-melodic-actionlib-msgs, ros-melodic-catkin, ros-melodic-geometry-msgs, ros-melodic-message-runtime, ros-melodic-nav-msgs, ros-melodic-nifti-robot-driver-msgs, ros-melodic-nifti-teleop, ros-melodic-roscpp, ros-melodic-sensor-msgs, ros-melodic-std-msgs, ros-melodic-tf, ros-melodic-tradr-path-planner, ros-melodic-tradr-trajectory-control-msgs, ros-melodic-visualization-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-melodic-tradr-trajectory-control
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, ros-melodic-actionlib, ros-melodic-actionlib-msgs, ros-melodic-geometry-msgs, ros-melodic-message-runtime, ros-melodic-nav-msgs, ros-melodic-nifti-robot-driver-msgs, ros-melodic-nifti-teleop, ros-melodic-roscpp, ros-melodic-sensor-msgs, ros-melodic-std-msgs, ros-melodic-tf, ros-melodic-tradr-path-planner, ros-melodic-tradr-trajectory-control-msgs, ros-melodic-visualization-msgs
+Description: The trajectory control package
