@@ -2,6 +2,11 @@
 Changelog for package ms_octomap_server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.0 (2020-04-02)
+------------------
+* Move to Melodic [removed ref to vrep simulation]
+* Contributors: pulver
+
 1.0.11 (2018-11-05)
 -------------------
 * Merge branch 'master' of https://github.com/LCAS/tradr_uol

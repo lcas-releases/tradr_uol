@@ -1,32 +1,25 @@
-# trav_nav
+# tradr_uol
 3D Autonomous Navigation
 
 If using this code, please cite the associated publication:
 
 ```
-@INPROCEEDINGS{6719360,
-author={M. Gianni and G. Gonnelli and A. Sinha and M. Menna and F. Pirri},
-booktitle={2013 IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR)},
-title={An Augmented Reality approach for trajectory planning and control of tracked vehicles in rescue environments},
-year={2013},
-volume={},
-number={},
-pages={1-6},
-keywords={augmented reality;mobile robots;path planning;pose estimation;SLAM (robots);tracked vehicles;tracking;trajectory control;augmented reality;trajectory planning;tracked vehicles;rescue environments;human operator;AR-based interface;3D path planning;obstacle negotiation;3D movements;marker pen;trajectory tracking controller;localization system;position feedback;dead reckoning system;ICP-based SLAM;pose estimation;3D map;planning framework;autonomous robot navigation;Trajectory;Vehicles;Three-dimensional displays;Robot kinematics;Tracking;Planning;Augmented Reality;Trajectory tracking;Trajectory control;Unmanned Ground Vehicles;Urban Search;Rescue Robotics},
-doi={10.1109/SSRR.2013.6719360},
-ISSN={2374-3247},
-month={Oct},}
+Gianni, Mario, et al. "An augmented reality approach for trajectory planning and control of tracked vehicles in rescue environments." Safety, Security, and Rescue Robotics (SSRR), 2013 IEEE International Symposium on. IEEE, 2013.
+
+Ferri, F. Gianni, M. Menna, M. and Pirri, F. Point Cloud Segmentation and 3D Path Planning for Tracked Vehicles in Cluttered and Dynamic Environments. In Proceedings of the 3rd IROS Workshop on Robots in Clutter: Perception and Interaction in Clutter. Chicago, Illinois, September 2014.
+
+Menna, M. Gianni, M. Ferri, F. and Pirri, F. Real-time Autonomous 3D Navigation for Tracked Vehicles in Rescue Environments. In Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS). Chicago, Illinois, September 2014.
+
+Gianni, M. Nardi, F. Ferri, F. Cantucci, F. Ruiz, M. Pushparaj, K. and Pirri, F. MIOM:A MIxed-Initiative Operational Model in Urban Search and Rescue. In Proceedings of the 18th International Conference on Control, Automation and Robotics (ICCAR). Copenhagen, Denmark, June 2016.
+
+Mario Gianni, Federico Nardi, Federico Ferri, Filippo Cantucci, Manuel A. Ruiz Garcia, Karthik Pushparaj, & Fiora Pirri. (2016). MIOM: A Mixed-Initiative Operational Model for Robots in Urban Search and Rescue (Version 10004629). http://doi.org/10.5281/zenodo.1124702
 ```
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=-n2mhRB8xPc
+" target="_blank"><img src="http://img.youtube.com/vi/-n2mhRB8xPc/0.jpg" 
+alt="Realtime Autonomous 3D Navigation for Tracked Vehicles in Rescue Environments
+" width="240" height="180" border="10" /></a>
 
 ## How to Install, Compile and Run
-
-### Recompile PCL
-
-It seems that PCL needs to be recompiled with the -std=c++11 flag enabled in order to not cause segfaults on the initialization of boost.
-
-To correct this, you need to compile PCL from their git repo. One way to make PCL compile with the c++11 option is to add this to the CMakeLists.txt: SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-
-When you have the PCL compiled, you need to make install, and change CMakeLists.txt on tradr_path_planner to use these libraries, this can be done by changing the line: find_package(PCL 1.7 REQUIRED COMPONENTS common io) to find_package(PCL REQUIRED COMPONENTS common io)"
 
 ### Install V-REP
 
@@ -42,16 +35,16 @@ When you have the PCL compiled, you need to make install, and change CMakeLists.
 * Open a terminal
 * Then execute
 <pre><code class="c">
-$ cd ~/trav_nav_indigo_ws
+$ cd ~/catkin_ws
 </code></pre>
 * Then compile
 <pre><code class="c">
-$ catkin_make -j8
+$ catkin_make
 </code></pre>
 
 ### Install the vrep_ugv_plugin Package
 
-Once you have compiled the tradr-simulation stack, you have to copy the lib _~/trav_nav_indigo_ws/devel/lib/libv_repExtRos.so_ in the installation folder VREP_ROOT_DIR (NOTE: this lib enables V-REP to get and parse track velocity command messages)
+Once you have compiled the tradr-simulation stack, you have to copy the lib _~/catkin_ws/devel/lib/libv_repExtRos.so_ in the installation folder VREP_ROOT_DIR (NOTE: this lib enables V-REP to get and parse track velocity command messages)
 
 ### Testing the vrep_ugv_simulation Package
 

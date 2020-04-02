@@ -2,6 +2,9 @@
 Changelog for package stamped_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.1.0 (2020-04-02)
+------------------
+
 1.0.11 (2018-11-05)
 -------------------
 * Merge branch 'master' of https://github.com/LCAS/tradr_uol
