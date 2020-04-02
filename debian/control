@@ -1,0 +1,12 @@
+Source: ros-melodic-tradr-path-planner-rviz-wp-plugin
+Section: misc
+Priority: optional
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), qtbase5-dev, ros-melodic-catkin, ros-melodic-class-loader, ros-melodic-dynamic-reconfigure, ros-melodic-exploration-msgs, ros-melodic-geometry-msgs, ros-melodic-message-filters, ros-melodic-nav-msgs, ros-melodic-patrolling-build-graph-msgs, ros-melodic-pcl-catkin-c11, ros-melodic-pcl-conversions-c11, ros-melodic-pcl-ros-c11, ros-melodic-rviz, ros-melodic-std-msgs, ros-melodic-tf, ros-melodic-tradr-path-planner, ros-melodic-tradr-trajectory-control-msgs, ros-melodic-wireless-network-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-melodic-tradr-path-planner-rviz-wp-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-class-loader, ros-melodic-dynamic-reconfigure, ros-melodic-exploration-msgs, ros-melodic-geometry-msgs, ros-melodic-message-filters, ros-melodic-nav-msgs, ros-melodic-patrolling-build-graph-msgs, ros-melodic-pcl-catkin-c11, ros-melodic-pcl-conversions-c11, ros-melodic-pcl-ros-c11, ros-melodic-rviz, ros-melodic-std-msgs, ros-melodic-tf, ros-melodic-tradr-path-planner, ros-melodic-tradr-trajectory-control-msgs, ros-melodic-wireless-network-msgs
+Description: The tradr_path_planner_rviz_wp_plugin package
