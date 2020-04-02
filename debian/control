@@ -1,0 +1,12 @@
+Source: ros-melodic-stamped-msgs
+Section: misc
+Priority: optional
+Maintainer: Riccardo Polvara <rpolvara@lincoln.ac.uk>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-catkin, ros-melodic-message-generation, ros-melodic-std-msgs
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-melodic-stamped-msgs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-message-runtime, ros-melodic-std-msgs
+Description: std_msgs with headers (timestamps).
